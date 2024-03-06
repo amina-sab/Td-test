@@ -1,3 +1,6 @@
+from CartePizzeriaException import CartePizzeriaException
+
+
 class CartePizzeria:
     def __init__(self):
         self.pizzas=[]
@@ -14,7 +17,8 @@ class CartePizzeria:
     def remove_pizza(self,name):
         for p in self.pizzas:
             if(p.name==name):
-                self.pizzas.remove(p)
+                self.pizzas.remove(p) 
+                return
             
-            raise CartePizzeriaException("Pizza not found: " + name)
+        raise CartePizzeriaException("Pizza not found: " + name)
     
